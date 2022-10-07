@@ -28,8 +28,9 @@ void motor6 (int s,int d)
   digitalWrite(27,d);
   analogWrite(7,s);
 }
+/*===================================================*/
 void forward (int s)
-{
+{ 
   motor1(s,1);
   motor2(s,1);
   motor3(s,0);
@@ -56,6 +57,28 @@ void left (int s)
   motor3(s,0);
   motor4(s,0);
 }
+/*===================================================*/
+void fr (int s)
+{
+  motor1(s,0);
+  motor3(s,0);
+}
+void fl (int s)
+{
+  motor2(s,0);
+  motor4(s,0);
+}
+void br (int s)
+{
+  motor1(s,1);
+  motor3(s,1);
+}
+void bl (int s)
+{
+  motor2(s,1);
+  motor4(s,1);
+}
+/*===================================================*/
 void xystop (void)
 {
   motor1(0,0);
@@ -78,3 +101,4 @@ void zstop (void)
   motor5(0,0);
   motor6(0,0);
 }
+/*===================================================*/
