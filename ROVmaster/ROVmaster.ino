@@ -8,7 +8,7 @@ void setup() {
   pinMode(A3, INPUT);
   pinMode(A4, INPUT);
   pinMode(A5, INPUT);
-  pinMode(A6, NIPUT);
+  pinMode(A6, INPUT);
   Serial.begin(9600);
 }
 
@@ -47,12 +47,11 @@ void loop() {
     Serial.println(p1);
   }
   else if (x1<-10 && y1<10)
-  else
   {
     xystop();
     Serial.println("stop");
   }
-  if (p3>10)
+  else if (p3>10)
   {
     up(p3);
     Serial.println("up");
