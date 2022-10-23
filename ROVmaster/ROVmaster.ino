@@ -25,55 +25,44 @@ void setup() {
 }
 
 void loop() {
-  int x1 = map(analogRead(A0), 1023, 0, 0, 4);
-  int y1 = map(analogRead(A1), 1023, 0, 0, 4);
-  int x2 = map(analogRead(A2), 1023, 0, 0, 4);
-  int y2 = map(analogRead(A3), 1023, 0, 0, 4);
-  int p1 = analogRead(A4) / 4;
-  int p2 = analogRead(A5) / 4;
-  int p3 = map(analogRead(A6), 1023, 0, 0, 255);
-
-
-  if (x1 < 2 && y1 == 2) {
+  int gap_start = 0;
+  int gap_point = 1;
+  int gap_end = 3;
+  int x1 = (int) map(analogRead(A0), 1023, 0, gap_start, gap_end);
+  int y1 = (int) map(analogRead(A1), 1023, 0, gap_start, gap_end);
+  int x2 = (int) map(analogRead(A2), 1023, 0, gap_start, gap_end);
+  int y2 = (int) map(analogRead(A3), 1023, 0, gap_start, gap_end);
+  //int p1 = (int) analogRead(A4) / 4;
+  int p2 = (int) analogRead(A5) / 4;
+  int p3 = (int) map(analogRead(A6), 1023, 0, 0, 255);
+  int p1 = (int) map(analogRead(A4), 0, 1023, 110, 255);
+  if (p1 <120)
+  {
+    p1 = 0;
+  }
+  if (x1 < gap_point && y1 == gap_point) {
     forward(p1);
-    Serial.println("forward");
-    Serial.println(p1);
-  } else if (x1 > 2 && y1 == 2) {
+  } else if (x1 > gap_point && y1 == gap_point) {
     backword(p1);
-    Serial.println("Backword");
-    Serial.println(p1);
-  } else if (y1 < 2 && x1 == 2) {
+  } else if (y1 < gap_point && x1 == gap_point) {
     right(p1);
-    Serial.println("right");
-    Serial.println(p1);
-  } else if (y1 > 2 && x1 == 2) {
+  } else if (y1 > gap_point && x1 == gap_point) {
     left(p1);
-    Serial.println("left");
-    Serial.println(p1);
-  } else if (x1 < 2 && y1 < 2) {
+  } else if (x1 < gap_point && y1 < gap_point) {
     fr(p1);
-    Serial.println("fr");
-    Serial.print(p1);
-  } else if (x1 < 2 && y1 > 2) {
+  } else if (x1 < gap_point && y1 > gap_point) {
     fl(p1);
-    Serial.println("fl");
-    Serial.print(p1);
-  } else if (x1 > 2 && y1 < 2) {
+  } else if (x1 > gap_point && y1 < gap_point) {
     br(p1);
-    Serial.println("br");
-    Serial.print(p1);
-  } else if (x1 > 2 && y1 > 2) {
+  } else if (x1 > gap_point && y1 > gap_point) {
     bl(p1);
-    Serial.println("bl");
-    Serial.print(p1);
-  } else if (x1==2 && y1==2){
+  } else if (x1==gap_point && y1==gap_point){
     xystop();
-    Serial.println("stop");
   }
   else{
-    break;
+    xystop();
   }
-  /*----------------------------*/
+  /*
   if (p3 < 120) {
     up(p3);
     Serial.println("up");
@@ -85,4 +74,5 @@ void loop() {
   } else {
     zstop();
   }
+  */
 }

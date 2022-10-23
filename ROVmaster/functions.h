@@ -1,9 +1,9 @@
-void motor1 (int s,int d);
-void motor2 (int s,int d);
-void motor3 (int s,int d);
-void motor4 (int s,int d);
-void motor5 (int s,int d);
-void motor6 (int s,int d);
+void motor1 (int s,bool d);
+void motor2 (int s,bool d);
+void motor3 (int s,bool d);
+void motor4 (int s,bool d);
+void motor5 (int s,bool d);
+void motor6 (int s,bool d);
 /*=========================*/
 void forward (int s);
 void backword (int s);
