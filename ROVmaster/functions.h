@@ -19,3 +19,6 @@ void up (int s);
 void down (int s);
 void zstop (void);
 /*=========================*/
+#define gap_start 0
+#define gap_point 1
+#define gap_end 3

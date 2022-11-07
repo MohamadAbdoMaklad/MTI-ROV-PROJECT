@@ -25,21 +25,23 @@ void setup() {
 }
 
 void loop() {
-  int gap_start = 0;
-  int gap_point = 1;
-  int gap_end = 3;
+  //int gap_start = 0;
+  //int gap_point = 1;
+  //int gap_end = 3;
+
   int x1 = (int) map(analogRead(A0), 1023, 0, gap_start, gap_end);
   int y1 = (int) map(analogRead(A1), 1023, 0, gap_start, gap_end);
   int x2 = (int) map(analogRead(A2), 1023, 0, gap_start, gap_end);
   int y2 = (int) map(analogRead(A3), 1023, 0, gap_start, gap_end);
   //int p1 = (int) analogRead(A4) / 4;
-  int p2 = (int) analogRead(A5) / 4;
-  int p3 = (int) map(analogRead(A6), 1023, 0, 0, 255);
+  //int p2 = (int) analogRead(A5) / 4;
+  //int p3 = (int) map(analogRead(A6), 1023, 0, 0, 255);
   int p1 = (int) map(analogRead(A4), 0, 1023, 110, 255);
   if (p1 <120)
   {
     p1 = 0;
   }
+  
   if (x1 < gap_point && y1 == gap_point) {
     forward(p1);
   } else if (x1 > gap_point && y1 == gap_point) {
