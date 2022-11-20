@@ -35,13 +35,17 @@ void loop() {
   int y2 = (int) map(analogRead(A3), 1023, 0, gap_start, gap_end);
   //int p1 = (int) analogRead(A4) / 4;
   //int p2 = (int) analogRead(A5) / 4;
-  //int p3 = (int) map(analogRead(A6), 1023, 0, 0, 255);
+  int p3 = (int) map(analogRead(A5), 1023, 0, gap_start, gap_end);
+  int p3_1 = (int) map(analogRead(A5), 500, 1023, 0, 255);
+  int p3_2 = (int) map(analogRead(A5), 524, 0, 0, 255);
+  
   int p1 = (int) map(analogRead(A4), 0, 1023, 110, 255);
   if (p1 <120)
   {
     p1 = 0;
   }
   
+  //===============================================//
   if (x1 < gap_point && y1 == gap_point) {
     forward(p1);
   } else if (x1 > gap_point && y1 == gap_point) {
@@ -64,6 +68,32 @@ void loop() {
   else{
     xystop();
   }
+  //========================================================//
+  if (x2 < gap_point && y2 == gap_point) {
+    rotatecw(p1);
+  }
+  else if (x2 > gap_point && y2 == gap_point) {
+    rotateccw(p1);
+  }
+  else if (y2 < gap_point && x2 == gap_point) {
+    teltup(p1);
+  }
+  else if (y2 > gap_point && x2 == gap_point) {
+    teltdown(p1);
+  }
+  //========================================================//
+  if (p3 > gap_point)
+  {
+    up(p3_1);
+  }
+  else if (p3 < gap_point)
+  {
+    down(p3_2);
+  }
+  else
+  {
+    zstop();
+  }
   /*
   if (p3 < 120) {
     up(p3);
@@ -77,4 +107,5 @@ void loop() {
     zstop();
   }
   */
+
 }

@@ -19,6 +19,11 @@ void up (int s);
 void down (int s);
 void zstop (void);
 /*=========================*/
+void teltup (int s);
+void teltdown (int s);
+void rotatecw (int s);
+void rotateccw (int s);
+/*=========================*/
 #define gap_start 0
 #define gap_point 1
 #define gap_end 3

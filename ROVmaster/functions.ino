@@ -119,3 +119,29 @@ void zstop (void)
   motor6(0,0);
 }
 /*===================================================*/
+void teltup (int s)
+{
+  motor5(s,1);
+  motor6(s,0);
+}
+void teltdown (int s)
+{
+  motor5(s,0);
+  motor6(s,1);
+}
+void rotatecw (int s)
+{
+  motor1(s,0);
+  motor2(s,1);                                                                      
+
+  motor3(s,0);
+  motor4(s,1);
+}
+void rotateccw (int s)
+{
+  motor1(s,1);
+  motor2(s,0);
+  motor3(s,1);
+  motor4(s,0);
+}
+/*===================================================*/
