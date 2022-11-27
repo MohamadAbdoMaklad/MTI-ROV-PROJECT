@@ -44,7 +44,7 @@ void loop() {
   {
     p1 = 0;
   }
-  
+
   //===============================================//
   if (x1 < gap_point && y1 == gap_point) {
     forward(p1);
@@ -68,6 +68,7 @@ void loop() {
   else{
     xystop();
   }
+  
   //========================================================//
   if (x2 < gap_point && y2 == gap_point) {
     rotatecw(p1);
