@@ -1,4 +1,3 @@
-#include <Arduino.h>
 void motor1 (int s,bool d);
 void motor2 (int s,bool d);
 void motor3 (int s,bool d);
