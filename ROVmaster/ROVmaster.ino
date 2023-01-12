@@ -9,18 +9,38 @@ void setup() {
   pinMode(A4, INPUT);
   pinMode(A5, INPUT);
   pinMode(A6, INPUT);
+  
   pinMode(2, OUTPUT);
-  pinMode(3, OUTPUT);
-  pinMode(4, OUTPUT);
-  pinMode(5, OUTPUT);
-  pinMode(6, OUTPUT);
-  pinMode(7, OUTPUT);
   pinMode(22, OUTPUT);
+  
+  pinMode(3, OUTPUT);
   pinMode(23, OUTPUT);
+  
+  pinMode(4, OUTPUT);
   pinMode(24, OUTPUT);
+  
+  pinMode(5, OUTPUT);
   pinMode(25, OUTPUT);
+  
+  pinMode(6, OUTPUT);
   pinMode(26, OUTPUT);
+  
+  pinMode(7, OUTPUT);
   pinMode(27, OUTPUT);
+  
+  pinMode(28, OUTPUT);
+  pinMode(29, OUTPUT);
+  
+  pinMode(30, OUTPUT);
+  pinMode(31, OUTPUT);
+  
+  pinMode(32, OUTPUT);
+  pinMode(33, OUTPUT);
+
+  pinMode(34, OUTPUT);
+  pinMode(35, OUTPUT);
+
+
   Serial.begin(9600);
 }
 
@@ -36,8 +56,8 @@ void loop() {
   //int p1 = (int) analogRead(A4) / 4;
   //int p2 = (int) analogRead(A5) / 4;
   int p3 = (int) map(analogRead(A5), 1023, 0, gap_start, gap_end);
-  int p3_1 = (int) map(analogRead(A5), 500, 1023, 0, 255);
-  int p3_2 = (int) map(analogRead(A5), 524, 0, 0, 255);
+  int p3_1 = (int) map(analogRead(A5), 578, 1023, 0, 255);
+  int p3_2 = (int) map(analogRead(A5), 450, 0, 0, 255);
   
   int p1 = (int) map(analogRead(A4), 0, 1023, 110, 255);
   if (p1 <120)

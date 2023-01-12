@@ -145,3 +145,18 @@ void rotateccw (int s)
   motor4(s,0);
 }
 /*===================================================*/
+//stepper motors functions
+void stepperdirection(int dirPin,int stepPin,int speed,bool direction)
+{
+  int stepsPerRevolution = 10;
+   digitalWrite(dirPin, direction);
+    for(int x = 0; x < stepsPerRevolution; x++)
+    {
+     digitalWrite(stepPin, HIGH);
+    delayMicroseconds(speed);
+    digitalWrite(stepPin, LOW);
+    delayMicroseconds(speed);
+    }
+    stepsPerRevolution ++; 
+}
+

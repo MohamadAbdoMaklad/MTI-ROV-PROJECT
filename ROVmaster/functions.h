@@ -25,6 +25,8 @@ void teltdown (int s);
 void rotatecw (int s);
 void rotateccw (int s);
 /*=========================*/
+void stepperdirection(int dirPin,int stepPin,int speed,bool direction);
+/*=========================*/
 #define gap_start 0
 #define gap_point 1
 #define gap_end 3

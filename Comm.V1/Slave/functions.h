@@ -24,6 +24,20 @@ void teltdown (int s);
 void rotatecw (int s);
 void rotateccw (int s);
 /*=========================*/
+void StepperMOTOR_1(int speed,bool direction);
+void StepperMOTOR_2(int speed,bool direction);
+void StepperMOTOR_3(int speed,bool direction);
+void StepperMOTOR_4(int speed,bool direction);
+/*=========================*/
+void module_U(int speed);
+void module_D(int speed);
+void module_F(int speed);
+void module_B(int speed);
+void module_R(int speed);
+void module_L(int speed);
+/*==========================*/
 #define gap_start 0
 #define gap_point 1
 #define gap_end 3
+/*============================*/
+#define seaLevelPressure_hPa 1013.25
